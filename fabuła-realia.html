@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Fabuła i Realia - Veilborn</title>
+	<link rel="icon" type="image/x-icon" href="https://i.imgur.com/09raxnB.png" />
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" />
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:400,700' />
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+	rel="stylesheet" />
+        <link href="https://db.onlinewebfonts.com/c/a4fe72b95bae51fd7c43b30269f42713?family=Pirata+One" rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,400;1,500;1,900&display=swap" rel="stylesheet" />
+
+	<style>
+
+body {
+	animation: fadeBackgroundIn 1s;
+	transition: all 1s ease;
+		}
+
+	@keyframes fadeBackgroundIn {
+	from {
+	opacity: 0;}
+
+	to {
+	opacity: 1;}
+	}
+
+		html,
+		body,
+		div,
+		article,
+		section,
+		main,
+		footer,
+		header,
+		form,
+		fieldset,
+		legend,
+		pre,
+		a,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		ol,
+		li,
+		table,
+		td,
+		th,
+		tr,
+		.border-box {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box
+		}
+
+		body {
+			margin: 0;
+		}
+
+:root {
+      --grd-uniwersum: radial-gradient(circle, var(--lightred), var(--darkred));
+      --clr-menuh2: #6c2625;
+      --bgr-menubelka: rgb(14 14 14 / 65%);
+      --darkred: #741f1f;
+      --lightred: #b90303;
+      --clr-belka2: #553538;
+      --clr-powrot: #602727;
+      --brd1: 1px solid rgba(90, 90, 90, 0.08);
+      --box-shadow: 0 0 4px 2px rgba(19, 19, 19, .45), 0 0 4px 2px rgba(19, 19, 19, .55) inset;
+      --grd-bg1: linear-gradient(180deg, rgb(24 24 24) 0%, rgb(26 26 26) 35%, rgb(16 16 16) 100%);
+      --grd-bg1-hover: linear-gradient(180deg, rgb(40 28 28) 0%, rgb(40 19 19) 35%, rgb(22 14 14) 100%);
+      --txt-shadow: 0 0 2px hsl(0, 0%, 6%); 
+      --clrfontgeneral: #760c0c;
+      --nagł-bkg: #1C1C1C;
+      --brd02: #3a3a3a;
+      --bg03: #262626;
+      --przerywnik-img: url('https://veilborn-guidebook.7m.pl/img/przerywnik.png');
+      --powitanie: url('https://imgzb.com/images/2025/02/26/73fIB.png');
+      --font1:'Pirata One', sans-serif;
+      --font2:'Poppins', sans-serif;
+      --wampiry: #8f2a2a;
+      --łowcy: #7783a1;
+      --ludzie: #8d775d;
+      --minezawa: #bf91bb;
+      --londyn: #adb9cb;}
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top: 81px;
+    left: 31px;
+    z-index: 99;
+    -webkit-user-select: none;
+    user-select: none;
+    font-family: var(--font2);
+}
+
+#menuToggle a {
+    background-color: var(--bgr-menubelka);
+    text-decoration: none;
+    color: #b1b1b1;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-transform: lowercase;
+    display: block;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 10px 18px;
+    height: 36px;
+    margin: 7px 0;
+    border: 1px solid rgb(153 153 153 / 10%);}
+
+#menuToggle b {
+	background-color: transparent;
+	color: var(--clrfontgeneral);
+	transition: all 0.3s ease;
+	font-family: var(--font2);
+	text-transform: lowercase;
+	font-weight: bold;
+	border-radius: 3px;
+	padding: 6px 18px;
+	margin: 6px 0;
+	display: block;
+	font-size: 12px;}
+
+#menuToggle a:hover {
+	color: var(--clr-belka2);
+	padding-left: 20px;}
+
+#menuToggle input {
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -7px;
+	left: -5px;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 100;
+	-webkit-touch-callout: none;}
+
+#menuToggle span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin-bottom: 5px;
+        position: relative;
+	background: #fff;
+	border-radius: 3px;
+	z-index: 99;
+	transform-origin: 4px 0px;
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+	background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+	opacity 0.55s ease;}
+
+#menuToggle span:first-child {
+	transform-origin: 0% 0%;}
+
+#menuToggle span:nth-last-child(2) {
+	transform-origin: 0% 100%;}
+
+#menuToggle input:checked~span {
+	opacity: 1;
+	transform: rotate(45deg) translate(-4px, 2px);
+	background: var(--clrfontgeneral);}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+	opacity: 0;
+	transform: rotate(0deg) scale(0.2, 0.2);}
+
+#menuToggle input:checked~span:nth-last-child(2) {
+	transform: rotate(-45deg) translate(0, -5px);}
+
+#menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	z-index: 98;
+	width: 280px;
+	height: 100%;
+	padding: 35px 30px 0 25px;
+	list-style-type: none;
+	-webkit-font-smoothing: antialiased;
+	border-right: 3px solid var(--clrfontgeneral);
+	overflow: auto;
+	transform-origin: 0% 0%;
+	transform: translate(-100%, 0);
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        background: var(--nagł-bkg);}
+
+#menu li {
+	font-size: 12px;}
+
+#menuToggle input:checked~ul {transform: none;}
+
+#menuToggle h {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: right;
+    color: #8b3b3b;
+    padding-left: 70px;
+    display: block;
+    line-height: 22px;
+    position: absolute;
+    margin-top: 49px;
+    margin-bottom: 40px;
+    white-space: nowrap;
+}
+
+#menuToggle h2 {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: var(--clr-menuh2);
+    display: block;
+    padding-bottom: 5px;
+    margin-top: 22px;
+    border-radius: 4px;
+}
+
+#menuToggle h2::before {
+    content: '';
+    background-color: rgb(16 15 15 / 80%);
+    border-bottom: 3px solid var(--grd-uniwersum);
+    border-radius: 4px;
+    display: block;
+    width: 222px;
+    height: 40px;
+    position: absolute;
+    margin-top: -10px;
+    z-index: -1;
+}
+
+#menuToggle h2::before {
+background-image: radial-gradient(circle, var(--lightred), var(--darkred));
+background-size: 100% 3px;
+border-top: 2px solid transparent;
+  background-position: bottom;
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+}
+
+#menuToggle a.powrót {
+    padding: 15px;
+    width: 274px;
+    height: 65px;
+    background: var(--grd-bg1);
+    text-shadow: var(--txt-shadow);
+    color: var(--clr-powrot);
+    box-shadow: var(--box-shadow);
+    border: var(--brd1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -33px;
+    margin-left: -24px;
+    position: absolute;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    transition: color .5s linear;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#menuToggle a.powrót:hover {
+    background: var(--grd-bg1-hover);
+    transition: color .5s linear;
+}
+
+#sidebar {
+    margin-top: 131px;
+}
+
+
+.nav {
+   height: 100%;
+   position: fixed;
+   z-index: 99;
+   top: 0;}
+
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;}
+   
+body {
+   color: white;
+   font-family: 'Roboto', sans-serif;
+   overflow: auto;
+   background: var(--nagł-bkg);}
+
+		
+#general {
+--groupe: var(--clrfontgeneral);}
+
+
+.blur-pic {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.blur-pic>div {
+    position: fixed;
+    width: 100%;
+    height: 68vh;
+    margin-top: -114px;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.blur {
+opacity: 0;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+filter: alpha(opacity=0);}
+
+.container {
+    background: var(--nagł-bkg);
+    z-index: 1;
+    border-top: 5px solid white;}
+
+.tytul {
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    font-family: var(--font1);
+    text-shadow: 0px 0px 4px rgb(0 0 0 / 86%);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    position: absolute;
+    height: 300px;
+    top: 17vh;
+}
+
+.tytul h {
+   display: block;
+   font-size: 50px;
+   letter-spacing: 1px;
+   font-weight: bold;
+   text-transform: none;}
+
+.poletekstowe {
+  text-align: justify;
+  color: white;
+  font-size: 14px;
+  line-height: 16px;
+  padding-bottom: 50px;
+  width: 800px;
+  margin: auto;
+  padding-top: 50px;}
+
+.poletekstowe h {
+  display: block;
+  font-size: 36px;
+  font-family: var(--font1);
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: none;
+  margin: 30px 0 15px 0;}
+
+.poletekstowe b {
+  color: var(--clrfontgeneral);
+  text-transform: uppercase;}
+
+.poletekstowe hr {
+    width: 94px;
+    border: 1px solid rgb(88 88 88 / 34%);
+    opacity: 0.5;
+}
+
+.br-veilborn {
+    background: var(--przerywnik-img);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 164px;
+    margin-top: 16px;
+    position: absolute;
+    width: 566px;
+    height: 41px;}
+
+	</style>
+</head>
+
+<body translate="no">
+	<nav role="navigation" class="nav">
+		<div id="menuToggle">
+			<input type="checkbox" />
+			<span></span>
+			<span></span>
+			<span></span>
+
+<ul id="menu">
+	<a class="powrót" href="https://veilborn.jcink.net">Powrót do Forum</a>
+
+	<h>Guidebook</br>Veilborn</h>
+	<div id="sidebar">
+	                                <h2>Uniwersum</h2>
+					<a href="https://veilborn-guidebook.7m.pl/">
+						<li>O Forum</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/fabuła-realia">
+						<li>Fabuła i Realia</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/chronologia">
+						<li>Chronologia</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/kraje">
+						<li>Kraje</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/organizacje">
+						<li>Organizacje</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/rasy">
+						<li>Rasy</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/zdolnosci">
+						<li>Moce, Magia i Artefakty</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/wazni-npc">
+						<li>Ważni NPC</li>
+					</a>
+					<h2>Mechanika</h2>
+					<a href="https://veilborn-guidebook.7m.pl/rozwoj-postaci">
+						<li>Rozwój Postaci</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/system-reputacji">
+						<li>System Reputacji</li>
+					</a>
+<a href="https://veilborn-guidebook.7m.pl/punkty-fabularne">
+	<li>Punkty Fabularne</li>
+          </a>
+<a href="https://veilborn-guidebook.7m.pl/biznes">
+	<li>Biznes w Londynie</li>
+</a>
+<a href="https://veilborn-guidebook.7m.pl/system-wad-i-zalet">
+	<li>System Wad i Zalet</li>
+</a>
+			</ul>
+		</div>
+	</nav>
+
+	<div class='blur-pic'>
+		<div style="background-image: url('https://imgzb.com/images/2025/02/27/733i0.png')"></div>
+		<div class='blur' style="background-image: url('https://imgzb.com/images/2025/02/27/733i0.png')"></div>
+	</div>
+	<div class="tytul">Ukryte Przeznaczenia<h>Fabuła i Realia</h>
+	</div>
+	<div class='container'>
+		<div class="poletekstowe">
+			<h>Realia</h><hr>
+			<br/>
+			<b>Główna Akcja:</b> Wielka Brytania - Fikcyjny <b>Londyn</b> i <b>Akademia Mortis</b>.<br/>
+			<b>Poboczne miejsce Akcji:</b> Minezawa (lub Kyoto).</br>
+			<b>Rok Akcji:</b> 2045/2050 (ostateczna wersja po napisaniu wydarzeń chronologicznych).<br />
+			<br />
+                        <div class="br-veilborn"></div>
+			<br /><br /><br />
+			<h>Fabuła</h>
+			<hr><br/>
+			wkrótce.<br /> 
+			<br /><br />
+		</div>
+		<div></div>
+	</div>
+	<script
+		src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js">
+	</script>
+
+	<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script id="rendered-js">
+		(function() {
+  //https://github.com/andreasstorm
+  $(window).scroll(function() {
+    var oVal;
+    oVal = $(window).scrollTop() / 240;
+    return $(".blur").css("opacity", oVal);
+  });
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiPGFub255bW91cz4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRWdDO0VBQUE7OztFQUVoQyxDQUFBLENBQUUsTUFBRixDQUFTLENBQUMsTUFBVixDQUFpQixRQUFBLENBQUEsQ0FBQTtBQUNqQixRQUFBO0lBQUUsSUFBQSxHQUFRLENBQUEsQ0FBRSxNQUFGLENBQVMsQ0FBQyxTQUFWLENBQUEsQ0FBQSxHQUF3QjtXQUNoQyxDQUFBLENBQUUsT0FBRixDQUFVLENBQUMsR0FBWCxDQUFlLFNBQWYsRUFBMEIsSUFBMUI7RUFGZSxDQUFqQjtBQUZnQyIsInNvdXJjZXNDb250ZW50IjpbIiNJbWFnZSBDcmVkaXQgLSBodHRwczovL21lZGl1bS5jb20vXG5cbiNodHRwczovL2dpdGh1Yi5jb20vYW5kcmVhc3N0b3JtXG5cbiQod2luZG93KS5zY3JvbGwgLT5cbiAgb1ZhbCA9ICgkKHdpbmRvdykuc2Nyb2xsVG9wKCkgLyAyNDApXG4gICQoXCIuYmx1clwiKS5jc3MgXCJvcGFjaXR5XCIsIG9WYWwiXX0=
+//# sourceURL=coffeescript
+//# sourceURL=pen.js
+	</script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

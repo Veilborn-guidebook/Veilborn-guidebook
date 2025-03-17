@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    // Funkcja do blokowania okienek związanych z ciasteczkami
+    function blockCookieBanners() {
+      var cookieBanners = document.querySelectorAll('[id*="cookie"], [class*="cookie"], [id*="consent"], [class*="consent"], [data-cookie], [id*="cookieConsent"], [id*="cookie-banner"]');
+      cookieBanners.forEach(function(banner) {
+        banner.style.display = 'none';
+      });
+    }
+
+    // Funkcja do blokowania reklam Allegro
+    function blockAllegroAds() {
+      var ads = document.querySelectorAll('[id*="allegro"], [class*="allegro"], [id*="banner"], [class*="banner"], [id*="popup"], [class*="popup"], [data-ad]');
+      ads.forEach(function(ad) {
+        ad.style.display = "none";
+      });
+
+      // Ukryj iframe, które mogą ładować reklamy Allegro
+      var iframes = document.querySelectorAll('iframe');
+      iframes.forEach(function(iframe) {
+        var src = iframe.getAttribute('src');
+        if (src && src.includes('allegro')) {
+          iframe.style.display = 'none';
+        }
+      });
+    }
+
+    // Funkcja do blokowania redirectów na Allegro
+    function blockAllegroRedirects() {
+      var links = document.querySelectorAll('a[href*="allegro.pl"]');
+      links.forEach(function(link) {
+        link.setAttribute('href', 'javascript:void(0)'); // Zablokuj kliknięcie
+      });
+    }
+
+    // Funkcja do blokowania wszystkich popupów
+    function blockPopups() {
+      var popups = document.querySelectorAll('[class*="popup"], [id*="popup"], [data-popup]');
+      popups.forEach(function(popup) {
+        popup.style.display = 'none';
+      });
+    }
+
+    // Funkcja do usuwania iframów z reklamami
+    function blockAdIframes() {
+      var iframes = document.querySelectorAll('iframe');
+      iframes.forEach(function(iframe) {
+        var src = iframe.getAttribute('src');
+        if (src && (src.includes('allegro') || src.includes('ads'))) {
+          iframe.style.display = 'none';
+        }
+      });
+    }
+
+    // Uruchom blokowanie okienek ciasteczek, reklam i redirectów
+    blockCookieBanners();
+    blockAllegroAds();
+    blockAllegroRedirects();
+    blockPopups();
+    blockAdIframes();
+
+    // Obserwator zmian DOM, aby dynamicznie blokować reklamy, ciasteczka i redirecty
+    var observer = new MutationObserver(function() {
+      blockCookieBanners();
+      blockAllegroAds();
+      blockAllegroRedirects();
+      blockPopups();
+      blockAdIframes();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Opcjonalne opóźnienie do załadowania elementów
+    setTimeout(function() {
+      blockCookieBanners();
+      blockAllegroAds();
+      blockAllegroRedirects();
+      blockPopups();
+      blockAdIframes();
+    }, 1000); // Opóźnienie 1 sekundy
+  });
+</script>
+
+
+
+	<link rel="icon" type="image/x-icon" href="https://i.imgur.com/09raxnB.png" />
+	<title>Witamy w Veilborn PBF (Vampire Knight)</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css" />
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" />
+
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:400,700' />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,400;1,500;1,900&display=swap"
+		rel="stylesheet" />
+
+	<style>
+	body {
+			animation: fadeBackgroundIn 1s;
+			transition: all 1s ease;
+		}
+
+		@keyframes fadeBackgroundIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		html,
+		body,
+		div,
+		article,
+		section,
+		main,
+		footer,
+		header,
+		form,
+		fieldset,
+		legend,
+		pre,
+		a,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		ol,
+		li,
+		table,
+		td,
+		th,
+		tr,
+		.border-box {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		:root {
+		  --grd-uniwersum: radial-gradient(circle, var(--lightred), var(--darkred));
+      --clr-menuh2: #6c2625;
+      --bgr-menubelka: rgb(14 14 14 / 65%);
+      --darkred: #741f1f;
+      --lightred: #b90303;
+      --clr-belka2: #553538;
+      --clr-powrot: #602727;
+      --brd1: 1px solid rgba(90, 90, 90, 0.08);
+      --box-shadow: 0 0 4px 2px rgba(19, 19, 19, .45), 0 0 4px 2px rgba(19, 19, 19, .55) inset;
+      --grd-bg1: linear-gradient(180deg, rgb(24 24 24) 0%, rgb(26 26 26) 35%, rgb(16 16 16) 100%);
+      --grd-bg1-hover: linear-gradient(180deg, rgb(40 28 28) 0%, rgb(40 19 19) 35%, rgb(22 14 14) 100%);
+      --txt-shadow: 0 0 2px hsl(0, 0%, 6%); 
+      --general: #760c0c;
+      --brd02: #3a3a3a;
+      --bg03: #262626;
+      --powitanie: url('https://imgzb.com/images/2025/02/26/73fIB.png');
+      --dark-bg: #1C1C1C;
+      --light: #E8E8E8;
+      --grupa: var(--general);
+		}
+
+		#s-m-t-tooltip {
+			max-width: 300px;
+			border-radius: 0px;
+			padding: 3px 6px;
+			margin: 10px 12px;
+			color: var(--general);
+			border: 1px solid #fff;
+			border-radius: 5px;
+			font-size: 10px;
+			text-transform: uppercase;
+			font-weight: bold;
+			background: #fff;
+			z-index: 99999;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		#menuToggle {
+			display: block;
+			position: relative;
+			top: 50px;
+			left: 45px;
+			z-index: 99;
+			-webkit-user-select: none;
+			user-select: none;
+			font-family: 'Poppins', sans-serif;
+		}
+
+#menuToggle a {
+    background-color: var(--bgr-menubelka);
+    text-decoration: none;
+    color: #b1b1b1;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-transform: lowercase;
+    display: block;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 10px 18px;
+    height: 36px;
+    margin: 7px 0;
+    border: 1px solid rgb(153 153 153 / 10%);
+}
+
+		#menuToggle b {
+			background-color: transparent;
+			color: var(--general);
+			transition: all 0.3s ease;
+			font-family: 'Poppins', sans-serif;
+			text-transform: lowercase;
+			font-weight: bold;
+			border-radius: 3px;
+			padding: 6px 18px;
+			margin: 6px 0;
+			display: block;
+			font-size: 12px;
+		}
+
+		#menuToggle a:hover {
+			color: var(--clr-belka2);
+			padding-left: 20px;
+		}
+
+		#menuToggle input {
+			display: block;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: -7px;
+			left: -5px;
+			cursor: pointer;
+			opacity: 0;
+			z-index: 100;
+			-webkit-touch-callout: none;
+		}
+
+		#menuToggle span {
+			display: block;
+			width: 25px;
+			height: 3px;
+			margin-bottom: 5px;
+			position: relative;
+			background: #fff;
+			border-radius: 3px;
+			z-index: 99;
+			transform-origin: 4px 0px;
+			transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+				background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+				opacity 0.55s ease;
+		}
+
+		#menuToggle span:first-child {
+			transform-origin: 0% 0%;
+		}
+
+		#menuToggle span:nth-last-child(2) {
+			transform-origin: 0% 100%;
+		}
+
+		#menuToggle input:checked~span {
+			opacity: 1;
+			transform: rotate(45deg) translate(-4px, 2px);
+			background: var(--general);
+		}
+
+		#menuToggle input:checked~span:nth-last-child(3) {
+			opacity: 0;
+			transform: rotate(0deg) scale(0.2, 0.2);
+		}
+
+		#menuToggle input:checked~span:nth-last-child(2) {
+			transform: rotate(-45deg) translate(0, -5px);
+		}
+
+		#menu {
+			position: fixed;
+			top: 0;
+			left: 0;
+			margin: 0;
+			z-index: 98;
+			width: 280px;
+			height: 100%;
+			padding: 35px 30px 0 25px;
+			list-style-type: none;
+			-webkit-font-smoothing: antialiased;
+			border-right: 3px solid var(--general);
+			overflow: auto;
+			transform-origin: 0% 0%;
+			transform: translate(-100%, 0);
+			transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+			background: var(--dark-bg);
+		}
+
+		#menu li {
+			font-size: 12px;
+		}
+
+#sidebar {
+    margin-top: 131px;
+}
+
+		#menuToggle ul {
+			transform: none;
+		}
+
+#menuToggle h {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: right;
+    color: #8b3b3b;
+    padding-left: 70px;
+    display: block;
+    line-height: 22px;
+    position: absolute;
+    margin-top: 49px;
+    margin-bottom: 40px;
+    white-space: nowrap;
+}
+
+#menuToggle h2 {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: var(--clr-menuh2);
+    display: block;
+    padding-bottom: 5px;
+    margin-top: 22px;
+    border-radius: 4px;
+}
+
+#menuToggle h2::before {
+    content: '';
+    background-color: rgb(16 15 15 / 80%);
+    border-bottom: 3px solid var(--grd-uniwersum);
+    border-radius: 4px;
+    display: block;
+    width: 222px;
+    height: 40px;
+    position: absolute;
+    margin-top: -10px;
+    z-index: -1;
+}
+
+#menuToggle h2::before {
+  background-image: radial-gradient(circle, var(--lightred), var(--darkred));
+  background-size: 100% 3px;
+  border-top: 2px solid transparent;
+  background-position: bottom;
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+}
+
+
+		.nav {
+			height: 100%;
+			position: fixed;
+			z-index: 99;
+			top: 0;
+		}
+
+		body {
+			position: relative;
+			font-size: 100%;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 400;
+			min-height: 100vh;
+			background-color: var(--dark-bg);
+			padding-top: 100px;
+		}
+
+		.powit {
+			width: 100%;
+			height: 100vh;
+			background-image: var(--powitanie);
+			background-position: center;
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			text-align: center;
+			z-index: 2;
+		}
+
+		.align {
+			width: 1px;
+			height: 1px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-top: 45%;
+		}
+
+.ramka-wstęp {
+    margin: auto;
+    margin-left: 256px;
+    border: 2px solid rgb(255 255 255 / 22%);
+    vertical-align: middle;
+    display: inline-block;
+    width: 800px;
+    background: rgb(0 0 0 / 63%);
+    border-radius: 5px;
+    padding: 40px 60px;
+    text-align: center;
+}
+
+		.ramka-wstęp h {
+			color: white;
+			font-size: 28px;
+			letter-spacing: 1px;
+			font-family: 'Poppins', sans-serif;
+			font-weight: bold;
+			padding-bottom: 20px;
+			display: block;
+		}
+
+		.ramka-wstęp h b {
+			border-bottom: 3px solid var(--general);
+		}
+
+		.ramka-wstęp p {
+			text-align: justify;
+			color: white;
+			font-size: 13px;
+		}
+
+
+    /*Próba*/
+
+#menuToggle a.powrót {
+    padding: 15px;
+    width: 258px;
+    height: 65px;
+    background: var(--grd-bg1);
+    text-shadow: var(--txt-shadow);
+    color: var(--clr-powrot);
+    box-shadow: var(--box-shadow);
+    border: var(--brd1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -33px;
+    margin-left: -24px;
+    position: absolute;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    transition: color .5s linear;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#menuToggle a.powrót:hover {
+    background: var(--grd-bg1-hover);
+    transition: color .5s linear;
+}
+
+
+	</style>
+</head>
+
+<body translate="no">
+	<nav role="navigation" class="nav">
+		<div id="menuToggle">
+
+			<ul id="menu">
+<a class="powrót" href="https://veilborn.jcink.net">Powrót do Forum</a>
+
+				<h>Guidebook</br>Veilborn</h>
+<div id="sidebar">
+	                                <h2>Uniwersum</h2>
+					<a href="https://veilborn-guidebook.7m.pl/">
+						<li>O Forum</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/fabuła-realia">
+						<li>Fabuła i Realia</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/chronologia">
+						<li>Chronologia</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/kraje">
+						<li>Kraje</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/organizacje">
+						<li>Organizacje</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/rasy">
+						<li>Rasy</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/zdolnosci">
+						<li>Moce, Magia i Artefakty</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/wazni-npc">
+						<li>Ważni NPC</li>
+					</a>
+					<h2>Mechanika</h2>
+					<a href="https://veilborn-guidebook.7m.pl/rozwoj-postaci">
+						<li>Rozwój Postaci</li>
+					</a>
+					<a href="https://veilborn-guidebook.7m.pl/system-reputacji">
+						<li>System Reputacji</li>
+					</a>
+<a href="https://veilborn-guidebook.7m.pl/punkty-fabularne">
+	<li>Punkty Fabularne</li>
+          </a>
+<a href="https://veilborn-guidebook.7m.pl/biznes">
+	<li>Biznes w Londynie</li>
+</a>
+<a href="https://veilborn-guidebook.7m.pl/system-wad-i-zalet">
+	<li>System Wad i Zalet</li>
+</a>
+	
+
+			</ul>
+      </div>
+		</div>
+	</nav>
+
+	<div class="powit">
+		<div class="align"></div>
+		<div class="ramka-wstęp">
+			<h><b>Witamy w Veilborn</b></h>
+			<p>
+				<b>Witamy Was na Veilborn - Vampire Knight!</b>
+				<br /><br />
+Witaj w świecie Vampire Knight: Veilborn PBF, inspirowanym bogatym uniwersum mangi i anime "Vampire Knight". Nasze forum przenosi Cię do Londynu, gdzie po wojnie w Minezawie rody czystokrwistych wampirów odbudowują swoje wpływy. W tętniącej życiem stolicy Wielkiej Brytanii przeplatają się historie pełne intryg, zdrad, morderstw, ale także niespodziewanych przyjaźni i chwil sielanki. 
+Dołącz do nas, aby przeżyć niezapomniane przygody, uczestniczyć w walce między dobrem a złem oraz odkrywać tajemnice, które kształtują losy zarówno wampirów, łowców, jak i ludzi. Twoja historia czeka na napisanie.
+				<br /><br />
+        Życzymy Miłej Lektury!
+          <br/></br/>
+        </p>
+		</div>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<script type="text/javascript" src="http://static.tumblr.com/kmw8hta/NaEnnqkxd/tooltip.js"></script>
+		<script src="http://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+		<script>
+			(function($){
+$(document).ready(function(){
+$(&#8220;a[title]&#8221;).style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:90,
+tip_fade_speed:600,
+attribute:&#8220;title&#8221;
+});
+});
+})(jQuery);
+		</script>
+</body>
+
+</html>
